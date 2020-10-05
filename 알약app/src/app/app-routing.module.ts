@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'newone',
+    loadChildren: () => import('./newone/newone.module').then( m => m.NewonePageModule)
+  },
+  {
+    path: 'countdown',
+    loadChildren: () => import('./countdown/countdown.module').then( m => m.CountdownPageModule)
+  },
 ];
 
 @NgModule({
