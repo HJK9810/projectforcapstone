@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NewonePage } from '../newone/newone.page';
 
 @Component({
   selector: 'app-home',
