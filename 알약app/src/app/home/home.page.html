@@ -1,17 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Main
-    </ion-title>
+      알림
+      <ion-button>add
+        <ion-router>
+          <ion-route url="/newone" component="newone"></ion-route>
+        </ion-router>      
+      </ion-button>
+    </ion-title>    
   </ion-toolbar>
 </ion-header>
 
-<ion-content center text-center>
-  <section>
-    <h3>평소 복용하는 약이 있나요?</h3>
-      <br>
-      <br>
-        <ion-button shape="round" fill="outline">Yes</ion-button>
-        <ion-button onclick="location.href='newone.page.html'" shape="round" fill="outline">No</ion-button>
-  </section>
+<ion-content>
+  <ion-list>
+    <ion-item>
+
+    </ion-item>
+  </ion-list>
 </ion-content>

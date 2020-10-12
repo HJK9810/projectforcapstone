@@ -9,24 +9,27 @@
     <ion-label>
       약 이름을 입력해 주세요
     </ion-label>
-    <input type="text" value="">
+    <ion-serchbar></ion-serchbar>
   </ion-list>
-  <br>
-  <br>
   <ion-list>
-    <ion-item>
-      <ion-list-header>복용 요일을 선택해주세요</ion-list-header>
-      <ion-checkbox checked slot="start">월요일</ion-checkbox>
-      <ion-checkbox checked slot="start">화요일</ion-checkbox>
-      <ion-checkbox checked slot="start">수요일</ion-checkbox>
-      <ion-checkbox checked slot="start">목요일</ion-checkbox>
-      <ion-checkbox checked slot="start">금요일</ion-checkbox>
-      <ion-checkbox checked slot="start">토요일</ion-checkbox>
-      <ion-checkbox checked slot="start">일요일</ion-checkbox>
+    <ion-list-header>복용 요일을 선택해주세요</ion-list-header>
+    <ion-item>      
+      <ion-checkbox checked slot="start" value="Mon">월요일</ion-checkbox>
+      <ion-checkbox checked slot="start" value="Tue">화요일</ion-checkbox>
+      <ion-checkbox checked slot="start" value="Wed">수요일</ion-checkbox>
+      <ion-checkbox checked slot="start" value="Thu">목요일</ion-checkbox>
+      <ion-checkbox checked slot="start" value="Fri">금요일</ion-checkbox>
+      <ion-checkbox checked slot="start" value="Sat">토요일</ion-checkbox>
+      <ion-checkbox checked slot="start" value="Sun">일요일</ion-checkbox>
     </ion-item>
   </ion-list>
-  <br>
-  <br>
-  <ion-button shape="round">prev</ion-button>
-  <ion-button shape="round">next</ion-button>
+  <ion-button shape="round">
+    prev
+  </ion-button>
+  <ion-button shape="round">
+    next
+    <!-- <ion-router>
+      <ion-route url="/countdown" component="countdown"></ion-route>
+    </ion-router> -->
+  </ion-button>
 </ion-content>
