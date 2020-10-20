@@ -1,35 +1,51 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>newone</ion-title>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-label>
+    <ion-list-header>
       약 이름을 입력해 주세요
-    </ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-input placeholder="내용을 입력해주세요."></ion-input>
+    </ion-item>
     <ion-serchbar></ion-serchbar>
   </ion-list>
   <ion-list>
     <ion-list-header>복용 요일을 선택해주세요</ion-list-header>
-    <ion-item>      
-      <ion-checkbox checked slot="start" value="Mon">월요일</ion-checkbox>
-      <ion-checkbox checked slot="start" value="Tue">화요일</ion-checkbox>
-      <ion-checkbox checked slot="start" value="Wed">수요일</ion-checkbox>
-      <ion-checkbox checked slot="start" value="Thu">목요일</ion-checkbox>
-      <ion-checkbox checked slot="start" value="Fri">금요일</ion-checkbox>
-      <ion-checkbox checked slot="start" value="Sat">토요일</ion-checkbox>
-      <ion-checkbox checked slot="start" value="Sun">일요일</ion-checkbox>
+    <ion-item> 
+      <ion-label>월요일</ion-label>    
+      <ion-checkbox checked slot="start" value="Mon"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>화요일</ion-label>  
+      <ion-checkbox checked slot="start" value="Tue"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>수요일</ion-label>  
+      <ion-checkbox checked slot="start" value="Wed"></ion-checkbox>
+    </ion-item> 
+    <ion-item>
+      <ion-label>목요일</ion-label>  
+      <ion-checkbox checked slot="start" value="Thu"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>금요일</ion-label>  
+      <ion-checkbox checked slot="start" value="Fri"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>토요일</ion-label>  
+      <ion-checkbox checked slot="start" value="Sat"></ion-checkbox>
+    </ion-item>  
+    <ion-item>
+      <ion-label>일요일</ion-label>  
+      <ion-checkbox checked slot="start" value="Sun"></ion-checkbox>
     </ion-item>
   </ion-list>
-  <ion-button shape="round">
+  <ion-button shape="round" routerLink="/home" routerDirection="root">
     prev
   </ion-button>
-  <ion-button shape="round">
+  <ion-button shape="round" routerLink="/countdown" routerDirection="root">
     next
-    <!-- <ion-router>
-      <ion-route url="/countdown" component="countdown"></ion-route>
-    </ion-router> -->
   </ion-button>
 </ion-content>

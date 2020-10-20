@@ -1,7 +1,4 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>countdown</ion-title>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -16,22 +13,19 @@
   <ion-list>
     <ion-item>
       <ion-label>1번</ion-label>
-      <ion-datetime picker-format="h:mm A"></ion-datetime>
+      <ion-datetime display-foramt="h:mm A" picker-format="h:mm A"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label>2번</ion-label>
-      <ion-datetime picker-format="h:mm A"></ion-datetime>
+      <ion-datetime display-foramt="h:mm A" picker-format="h:mm A"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label>3번</ion-label>
-      <ion-datetime picker-format="h:mm A"></ion-datetime>
+      <ion-datetime display-foramt="h:mm A" picker-format="h:mm A"></ion-datetime>
     </ion-item>
   </ion-list>
-  <ion-button>
+  <ion-button shape="round" routerLink="/newone" routerDirection="root">
     prev
-    <!-- <ion-router>
-      <ion-route url="/newone" component="newone"></ion-route>
-    </ion-router> -->
   </ion-button>
-  <ion-button>next</ion-button>
+  <ion-button shape="round" routerLink="/home" routerDirection="root">next</ion-button>
 </ion-content>
