@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage'
+import { from } from 'rxjs';
 import { Item } from '../classes/item'
 
 @Injectable({
@@ -7,15 +8,37 @@ import { Item } from '../classes/item'
 })
 export class ItemService {
 
+  public items: Item[] = [];
+
   constructor(private storage: Storage) { }
 
-  getItems() {}
+  getItems() {
 
-  saveItems() {}
+    return new Promise((reslove) => {
+      this.storage.get('items').then((items) => {
+        if(items) {
+          this.items = items;
+        }
+        reslove(true);
+      });
+    });
+  }
 
-  getItem(id: String) {}
+  saveItems() {
+    this.storage.set('items', this.items);
+  }
 
-  addItem(item: Item) {}
+  getItem(name: String) {
+    return this.items.find(item => item.name == name);
+  }
 
-  deleteItem(item: Item) {}
+  addItem(item: Item) {
+    this.items.push(item);
+    this.saveItems();
+  }
+
+  deleteItem(item: Item) {
+    this.items.splice(this.items.indexOf(item), 1);
+    this.saveItems();
+  }
 }

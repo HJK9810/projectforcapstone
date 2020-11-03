@@ -16,7 +16,15 @@ const routes: Routes = [
     loadChildren: () => import('./newone/newone.module').then( m => m.NewonePageModule)
   },
   {
+    path: 'newone/:id',
+    loadChildren: () => import('./newone/newone.module').then( m => m.NewonePageModule)
+  },
+  {
     path: 'countdown',
+    loadChildren: () => import('./countdown/countdown.module').then( m => m.CountdownPageModule)
+  },
+  {
+    path: 'countdown/:id',
     loadChildren: () => import('./countdown/countdown.module').then( m => m.CountdownPageModule)
   },
 ];

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { Item } from '../classes/item';
-import {} from '../services/item.service';
+import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
+import { ItemService } from '../services/item.service';
 
 @Component({
   selector: 'app-newone',
@@ -10,10 +12,10 @@ import {} from '../services/item.service';
 })
 export class NewonePage implements OnInit {
   private item: Item;
+  private editable: boolean = false;
 
-  constructor() {
+  constructor(private route: ActivatedRoute, private itemservices: ItemService, private navCtrl: NavController) {
     this.item = {
-      id: '',
       name: '',
       count: '',
       weekDay: ''
@@ -21,6 +23,24 @@ export class NewonePage implements OnInit {
    }
 
   ngOnInit() {
+    let name = this.route.snapshot.paramMap.get('name');
+
+    if(name) {
+      this.itemservices.getItems().then(() => {
+        this.editable = true;
+        this.item = this.itemservices.getItem(name);
+      });
+    }
+  }
+
+  saveItem() {
+    if(this.editable) {
+      this.itemservices.saveItems();
+    } else {
+      this.itemservices.addItem(this.item);
+    }
+
+    this.navCtrl.navigateBack('/countdown');
   }
 
 }
